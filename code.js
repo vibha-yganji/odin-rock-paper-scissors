@@ -5,7 +5,7 @@ function getComputerChoice() {
             return 'Rock';
             break;
         case 1:
-            return 'Scissor';
+            return 'Scissors';
             break;
         case 2:
             return 'Paper';
@@ -14,40 +14,58 @@ function getComputerChoice() {
 }
 
 function play_round (playerSelection, computerSelection) {
+    let counter;
+
     if (playerSelection.toLowerCase() == 'rock') {
         if (computerSelection.toLowerCase() == 'scissors') {
-            return 'You win. Rock beats Scissors'
+            counter = 1;
+            return 'You win. Rock beats Scissors';
         }
-        if (computerSelection.toLowerCase() == 'rock') {
+        else if (computerSelection.toLowerCase() == 'rock') {
             return 'Tie';
         }
-        if (computerSelection.toLowerCase() == 'paper') {
-            return "You lose. Paper beats Rock"
+        else if (computerSelection.toLowerCase() == 'paper') {
+            return "You lose. Paper beats Rock";
         }
     }
     if (playerSelection.toLowerCase() == 'paper') {
         if (computerSelection.toLowerCase() == 'scissors') {
-            return 'You lose. Scissors beats paper'
+            return 'You lose. Scissors beats paper';
         }
-        if (computerSelection.toLowerCase() == 'rock') {
-            return 'You win. Paper beats Rock'
+        else if (computerSelection.toLowerCase() == 'rock') {
+            counter = 1;
+            return 'You win. Paper beats Rock';   
         }
-        if (computerSelection.toLowerCase() == 'paper') {
-            return 'Tie!'
+        else if (computerSelection.toLowerCase() == 'paper') {
+            return 'Tie!';
         }
     }
     if (playerSelection.toLowerCase() == 'scissors') {
         if (computerSelection.toLowerCase() == 'scissors') {
-            return 'Tie!'
+            return 'Tie!';
         }
-        if (computerSelection.toLowerCase() == 'rock') {
-            return 'You lose. Rock beats Scissors'
+        else if (computerSelection.toLowerCase() == 'rock') {
+            return 'You lose. Rock beats Scissors';
         }
-        if (computerSelection.toLowerCase() == 'paper') {
-            return 'You win. Scissors beats paper'
+        else if (computerSelection.toLowerCase() == 'paper') {
+            counter = 1;
+            return 'You win. Scissors beats paper';
         }
-        
-    
+    }
+}
+function game () {
+    let counter = 0;
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt('Choose your choice!');
+        let computerSelection = getComputerChoice();
+        let result = play_round(playerSelection, computerSelection);
+        alert(result);
+    }
+    if (counter > 2) {
+        return "You win!";
+    }
+    else {
+        return "Hahaha you lose!";
     }
 
 }
