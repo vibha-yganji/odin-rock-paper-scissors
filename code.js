@@ -7,6 +7,6 @@ function getComputerChoice() {
             choice = 'Scissor';
         case 2:
             choice = 'Paper';
-
+    return choice;
     } 
 }
