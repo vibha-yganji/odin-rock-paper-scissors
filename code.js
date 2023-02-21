@@ -4,10 +4,13 @@ function getComputerChoice() {
     switch (numerical_choice) {
         case 0:
             choice = 'Rock';
+            break;
         case 1:
             choice = 'Scissor';
+            break;
         case 2:
             choice = 'Paper';
+            break;
     return choice;
     } 
 }
